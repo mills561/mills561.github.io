@@ -80,7 +80,8 @@
               if (!when) {
                 when = event.start.date;
               }
-              appendPre(event.summary + ' (' + when + ')')
+              var where = event.start.location;
+              appendPre(event.summary + ' (' + when + ')' + ' (' + where + ')');
             }
           } else {
             appendPre('No upcoming events found.');

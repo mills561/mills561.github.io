@@ -74,6 +74,7 @@
           appendPre('Upcoming events:');
 
           if (events.length > 0) {
+              console.log(events);
             for (i = 0; i < events.length; i++) {
               var event = events[i];
               var when = event.start.dateTime;

@@ -4,7 +4,7 @@ var CLIENT_ID = '1016110111538-s9lc4mmd3d8ehj04o39ju8k7tpt9isip.apps.googleuserc
 
 var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
 
-var IDS = ['primary', 'sswisty7@gmail.com'];
+var IDS = ['davsan56@gmail.com', 'sswisty7@gmail.com'];
 
 /**
 * Check if current user has authorized this application.
@@ -26,14 +26,14 @@ function checkAuth() {
 function handleAuthResult(authResult) {
   var authorizeDiv = document.getElementById('authorize-div');
   if (authResult && !authResult.error) {
-// Hide auth UI, then load client library.
-authorizeDiv.style.display = 'none';
-loadCalendarApi();
-} else {
-// Show auth UI, allowing the user to initiate authorization by
-// clicking authorize button.
-authorizeDiv.style.display = 'inline';
-}
+  // Hide auth UI, then load client library.
+  authorizeDiv.style.display = 'none';
+  loadCalendarApi();
+  } else {
+  // Show auth UI, allowing the user to initiate authorization by
+  // clicking authorize button.
+  authorizeDiv.style.display = 'inline';
+  }
 }
 
 /**

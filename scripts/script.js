@@ -84,7 +84,8 @@ function listUpcomingEvents() {
 
     request.execute(function(resp) {
       var events = resp.items;
-      appendPre(Object.keys(IDS)[j] + ' Upcoming events:');
+      var name = Object.keys(IDS)[j];
+      appendPre(name + ' Upcoming events:');
 
       if (events.length > 0) {
         for (i = 0; i < events.length; i++) {

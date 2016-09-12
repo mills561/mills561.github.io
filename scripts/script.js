@@ -84,7 +84,10 @@ function listUpcomingEvents() {
 
     request.execute(function(resp) {
       var events = resp.items;
-      var name = Object.keys(IDS)[j];
+      var name = event.creator.displayName;
+      if (!name) {
+        name = event.creator.email;
+      }
       appendPre(name + ' Upcoming events:');
 
       if (events.length > 0) {

@@ -3,6 +3,8 @@
       var CLIENT_ID = '1016110111538-s9lc4mmd3d8ehj04o39ju8k7tpt9isip.apps.googleusercontent.com';
 
       var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
+      
+      var IDS = ['primary', 'sswisty7@gmail.com'];
 
       /**
        * Check if current user has authorized this application.
@@ -60,34 +62,39 @@
        * appropriate message is printed.
        */
       function listUpcomingEvents() {
-        var request = gapi.client.calendar.events.list({
-          'calendarId': 'primary',
-          'timeMin': (new Date()).toISOString(),
-          'showDeleted': false,
-          'singleEvents': true,
-          'maxResults': 10,
-          'orderBy': 'startTime'
-        });
-
-        request.execute(function(resp) {
-          var events = resp.items;
-          appendPre('Upcoming events:');
-
-          if (events.length > 0) {
-            for (i = 0; i < events.length; i++) {
-              var event = events[i];
-              var when = event.start.dateTime;
-              if (!when) {
-                when = event.start.date;
-              }
-              var where = event.location;
-              appendPre(event.summary + ' (' + when + ')' + ' (' + where + ')');
+            for (var j = 0; j < IDS.length; j++) {
+                   var request = gapi.client.calendar.events.list({
+                      'calendarId': IDS[j],
+                      'timeMin': (new Date()).toISOString(),
+                      'showDeleted': false,
+                      'singleEvents': true,
+                      'maxResults': 10,
+                      'orderBy': 'startTime'
+                    });
+            
+                    request.execute(function(resp) {
+                      var events = resp.items;
+                      appendPre('Upcoming events:');
+            
+                      if (events.length > 0) {
+                        for (i = 0; i < events.length; i++) {
+                          var event = events[i];
+                          var when = event.start.dateTime;
+                          if (!when) {
+                            when = event.start.date;
+                          }
+                          var where = event.location;
+                          appendPre(event.summary + ' (' + when + ')' + ' (' + where + ')');
+                        }
+                      } else {
+                        appendPre('No upcoming events found.');
+                      }
+            
+                    });
+                    
+                    apprendPre("Space for new person");
+                    apprendPre("Space for new person");
             }
-          } else {
-            appendPre('No upcoming events found.');
-          }
-
-        });
       }
 
       /**

@@ -92,8 +92,8 @@
             
                     });
                     
-                    apprendPre("Space for new person");
-                    apprendPre("Space for new person");
+                    appendPre("Space for new person");
+                    appendPre("Space for new person");
             }
       }
 

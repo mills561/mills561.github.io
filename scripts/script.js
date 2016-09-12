@@ -4,7 +4,17 @@ var CLIENT_ID = '1016110111538-s9lc4mmd3d8ehj04o39ju8k7tpt9isip.apps.googleuserc
 
 var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
 
-var IDS = ['davsan56@gmail.com', 'sswisty7@gmail.com'];
+var IDS = {
+  "David": 'davsan56@gmail.com',
+  "Shawn": 'sswisty7@gmail.com',
+  "Ethan P": 'ecp341@gmail.com',
+  "Ethan G": 'gerrardletoux@gmail.com',
+  "Justin": 'jmasterj512@gmail.com',
+  "Kyle": 'devilsrage17@gmail.com',
+  "Nick": 'nickd5142@gmail.com',
+  "Sebastian": 'bm2ii1o7n8mr7lnv71g2o9dvrg@group.calendar.google.com',
+  "Steve": 'wuebbst@gmail.com'
+};
 
 /**
 * Check if current user has authorized this application.
@@ -62,9 +72,9 @@ function loadCalendarApi() {
 * appropriate message is printed.
 */
 function listUpcomingEvents() {
-  for (var j = 0; j < IDS.length; j++) {
+  for (var j = 0; j < Object.keys(IDS).length; j++) {
     var request = gapi.client.calendar.events.list({
-      'calendarId': IDS[j],
+      'calendarId': IDS[Object.keys(IDS)[j]],
       'timeMin': (new Date()).toISOString(),
       'showDeleted': false,
       'singleEvents': true,
@@ -74,7 +84,7 @@ function listUpcomingEvents() {
 
     request.execute(function(resp) {
       var events = resp.items;
-      appendPre('Upcoming events:');
+      appendPre(Object.keys(IDS)[j] + ' Upcoming events:');
 
       if (events.length > 0) {
         for (i = 0; i < events.length; i++) {

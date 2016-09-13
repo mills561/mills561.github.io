@@ -78,7 +78,7 @@ function listUpcomingEvents() {
       'timeMin': (new Date()).toISOString(),
       'showDeleted': false,
       'singleEvents': true,
-      'maxResults': 10,
+      'maxResults': 1,
       'orderBy': 'startTime'
     });
 
@@ -88,7 +88,7 @@ function listUpcomingEvents() {
       if (!name) {
         name = events[0].creator.email;
       }
-      appendPre(name + ' Upcoming events:');
+      appendPre(name + ' Next events:');
 
       if (events.length > 0) {
         for (i = 0; i < events.length; i++) {

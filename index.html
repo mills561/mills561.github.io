@@ -5,7 +5,7 @@
     <title>Mills 561 Schedule</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- jQuery -->
@@ -14,14 +14,16 @@
     <!-- Angular -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
 
-    <!-- Latest compiled and minified JavaScript -->
+    <!-- Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <!-- Custom js and api -->
+    <!-- Custom JS -->
     <script src="scripts/script.js"></script>
+
+    <!-- Google Calendar API -->
     <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
   </head>
-  <body class="container" ng-controller="app">
+  <body ng-app="calendar" ng-controller="app" class="container">
     <div id="header" class="row">
       <h1>Mills 561 Schedule</h1>
     </div>

@@ -122,4 +122,4 @@ app.controller("myCtrl", ['$scope', function ($scope) {
     var textContent = document.createTextNode(message + '\n');
     pre.appendChild(textContent);
   }
-}
+}]);

@@ -23,7 +23,7 @@
     <!-- Google Calendar API -->
     <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
   </head>
-  <body ng-app="calendar" ng-controller="app" class="container">
+  <body ng-app="calendar" ng-controller="app" class="container" ng-init="loadCalendarApi()">
     <div id="header" class="row">
       <h1>Mills 561 Schedule</h1>
     </div>

@@ -1,6 +1,14 @@
-var app = angular.module("calendar", []);
+var app = angular.module("calendar", ['gapi']);
 
-app.controller("app", ['$scope', function ($scope) {
+app.value('GoogleApp', {
+    apiKey: 'AIzaSyB437jFIIQlajkktwog2MCGO6YBNgFrGyk',
+    clientId: '1016110111538-s9lc4mmd3d8ehj04o39ju8k7tpt9isip.apps.googleusercontent.com',
+    scopes: [
+      'https://www.googleapis.com/auth/calendar.readonly'
+    ]
+  });
+
+app.controller("app", function ($scope, Calendar) {
   // Your Client ID can be retrieved from your project in the Google
   // Developer Console, https://console.developers.google.com
   var CLIENT_ID = '1016110111538-s9lc4mmd3d8ehj04o39ju8k7tpt9isip.apps.googleusercontent.com';
@@ -19,54 +27,60 @@ app.controller("app", ['$scope', function ($scope) {
     "Steve": 'wuebbst@gmail.com'
   };
 
-  /**
-  * Check if current user has authorized this application.
-  */
-  function checkAuth() {
-    gapi.auth.authorize(
-    {
-      'client_id': CLIENT_ID,
-      'scope': SCOPES.join(' '),
-      'immediate': true
-    }, handleAuthResult);
-  }
+  GAPI.init();
 
-  /**
-  * Handle response from authorization server.
-  *
-  * @param {Object} authResult Authorization result.
-  */
-  function handleAuthResult(authResult) {
-    var authorizeDiv = document.getElementById('authorize-div');
-    if (authResult && !authResult.error) {
-    // Hide auth UI, then load client library.
-    authorizeDiv.style.display = 'none';
-    $scope.loadCalendarApi();
-    } else {
-    // Show auth UI, allowing the user to initiate authorization by
-    // clicking authorize button.
-    authorizeDiv.style.display = 'inline';
-    }
-  }
+  // /**
+  // * Check if current user has authorized this application.
+  // */
+  // function checkAuth() {
+  //   gapi.auth.authorize(
+  //   {
+  //     'client_id': CLIENT_ID,
+  //     'scope': SCOPES.join(' '),
+  //     'immediate': true
+  //   }, handleAuthResult);
+  // }
 
-  /**
-  * Initiate auth flow in response to user clicking authorize button.
-  *
-  * @param {Event} event Button click event.
-  */
-  $scope.handleAuthClick = function(event) {
-    gapi.auth.authorize(
-      {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
-      handleAuthResult);
-    return false;
-  }
+  // /**
+  // * Handle response from authorization server.
+  // *
+  // * @param {Object} authResult Authorization result.
+  // */
+  // function handleAuthResult(authResult) {
+  //   var authorizeDiv = document.getElementById('authorize-div');
+  //   if (authResult && !authResult.error) {
+  //   // Hide auth UI, then load client library.
+  //   authorizeDiv.style.display = 'none';
+  //   $scope.loadCalendarApi();
+  //   } else {
+  //   // Show auth UI, allowing the user to initiate authorization by
+  //   // clicking authorize button.
+  //   authorizeDiv.style.display = 'inline';
+  //   }
+  // }
+
+  // /**
+  // * Initiate auth flow in response to user clicking authorize button.
+  // *
+  // * @param {Event} event Button click event.
+  // */
+  // $scope.handleAuthClick = function(event) {
+  //   gapi.auth.authorize(
+  //     {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
+  //     handleAuthResult);
+  //   return false;
+  // }
 
   /**
   * Load Google Calendar client library. List upcoming events
   * once client library is loaded.
   */
   $scope.loadCalendarApi = function() {
-    gapi.client.load('calendar', 'v3', listUpcomingEvents);
+    // gapi.client.load('calendar', 'v3', listUpcomingEvents);
+
+    // for (var i = 0; i < Object.keys(IDS).length; i++) {
+      var cal = Calendar.getCalendars(IDS[Object.keys(IDS)[0]]);
+      console.log(cal);
   }
 
   /**
@@ -122,4 +136,4 @@ app.controller("app", ['$scope', function ($scope) {
     var textContent = document.createTextNode(message + '\n');
     pre.appendChild(textContent);
   }
-}]);
+});

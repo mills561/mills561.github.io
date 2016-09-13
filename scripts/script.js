@@ -27,7 +27,7 @@ app.controller("app", function ($scope, Calendar) {
     "Steve": 'wuebbst@gmail.com'
   };
 
-  GAPI.init();
+  // GAPI.init();
 
   // /**
   // * Check if current user has authorized this application.

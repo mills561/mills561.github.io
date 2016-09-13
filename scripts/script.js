@@ -1,6 +1,6 @@
 var app = angular.module("app", ['ui.bootstrap']);
 
-app.controller("myCtrl", ['$scope', function ($scope) {
+app.controller("app", ['$scope', function ($scope) {
   // Your Client ID can be retrieved from your project in the Google
   // Developer Console, https://console.developers.google.com
   var CLIENT_ID = '1016110111538-s9lc4mmd3d8ehj04o39ju8k7tpt9isip.apps.googleusercontent.com';

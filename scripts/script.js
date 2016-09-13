@@ -54,7 +54,7 @@ app.controller("myCtrl", ['$scope', function ($scope) {
   *
   * @param {Event} event Button click event.
   */
-  function handleAuthClick(event) {
+  $scope.handleAuthClick = function(event) {
     gapi.auth.authorize(
       {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
       handleAuthResult);
@@ -65,7 +65,7 @@ app.controller("myCtrl", ['$scope', function ($scope) {
   * Load Google Calendar client library. List upcoming events
   * once client library is loaded.
   */
-  function loadCalendarApi() {
+  $scope.loadCalendarApi = function() {
     gapi.client.load('calendar', 'v3', listUpcomingEvents);
   }
 

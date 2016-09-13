@@ -13,7 +13,7 @@
 
     <!-- Angular -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
-    
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -21,14 +21,14 @@
     <script src="scripts/script.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
   </head>
-  <body class="container" ng-controller="app">
+  <body class="container" ng-controller="app" onload="loadCalendarApi()">
     <div id="header" class="row">
       <h1>Mills 561 Schedule</h1>
     </div>
     <div id="authorize-div" style="display: none">
       <span>Authorize access to Google Calendar API</span>
       <!--Button for the user to click to initiate auth sequence -->
-      <button id="authorize-button" onclick="handleAuthClick(event)">
+      <button id="authorize-button" onclick="$handleAuthClick(event)">
         Authorize
       </button>
     </div>

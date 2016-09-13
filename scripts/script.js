@@ -1,4 +1,4 @@
-var app = angular.module("app");
+var app = angular.module("app", []);
 
 app.controller("app", ['$scope', function ($scope) {
   // Your Client ID can be retrieved from your project in the Google

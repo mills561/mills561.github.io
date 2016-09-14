@@ -123,6 +123,8 @@ function listUpcomingEvents() {
             where = "Mills or elsewhere";
             if (id == "sebastian") {
               where = "Barrington or elsewhere";
+            } else if (id == "steve") {
+              where = "Woodsides or elsewhere";
             }
           }
 

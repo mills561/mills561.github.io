@@ -103,10 +103,22 @@ function listUpcomingEvents() {
         for (i = 0; i < events.length; i++) {
           var event = events[i];
           var when = event.start.dateTime;
+
+          var eventStartTime = new Date(event.start.dateTime);
+          var eventEndTime = new Date(even.end.dateTime);
+
+          var currently = (currentTime >= eventStartTime) && (currentTime <= eventEndTime);
+
           if (!when) {
             when = event.start.date;
           }
+
           var where = event.location;
+          if (currently)
+            where = event.location;
+          else
+            where = "Mills";
+
           appendPre(where, id);
         }
       } else {

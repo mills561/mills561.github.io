@@ -98,7 +98,6 @@ function listUpcomingEvents() {
       var events = resp.items;
       name = events[0].creator.email;
       id = EMAILS[name];
-      appendPre(name + ' Next event:', id);
 
       if (events.length > 0) {
         for (i = 0; i < events.length; i++) {
@@ -125,5 +124,6 @@ function listUpcomingEvents() {
 */
 function appendPre(message, id) {
   var toAdd = document.getElementById(id);
-  toAdd.innerHTML += message;
+  if (toAdd)
+    toAdd.innerHTML += message;
 }

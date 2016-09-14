@@ -97,7 +97,8 @@ function listUpcomingEvents() {
     request.execute(function(resp) {
       var events = resp.items;
       name = events[0].creator.email;
-      appendPre(name + ' Next event:');
+      id = EMAILS[name];
+      appendPre(name + ' Next event:', id);
 
       if (events.length > 0) {
         for (i = 0; i < events.length; i++) {
@@ -107,10 +108,10 @@ function listUpcomingEvents() {
             when = event.start.date;
           }
           var where = event.location;
-          appendPre(event.summary + ' (' + when + ')' + ' (' + where + ')\n');
+          appendPre(event.summary + ' (' + when + ')' + ' (' + where + ')\n', id);
         }
       } else {
-        appendPre('No upcoming events found.');
+        appendPre('No upcoming events found.', id);
       }
     });
   }
@@ -122,7 +123,7 @@ function listUpcomingEvents() {
 *
 * @param {string} message Text to be placed in pre element.
 */
-function appendPre(message) {
+function appendPre(message, id) {
   var toAdd = document.getElementById(id);
   toAdd.innerHTML += message;
 }

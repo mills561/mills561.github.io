@@ -107,7 +107,7 @@ function listUpcomingEvents() {
             when = event.start.date;
           }
           var where = event.location;
-          appendPre(event.summary + ' (' + when + ')' + ' (' + where + ')\n', id);
+          appendPre(where, id);
         }
       } else {
         appendPre('No upcoming events found.', id);

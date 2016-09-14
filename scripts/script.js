@@ -106,6 +106,7 @@ function listUpcomingEvents() {
 
           var eventStartTime = new Date(event.start.dateTime);
           var eventEndTime = new Date(event.end.dateTime);
+          var currentTime = new Date();
 
           var currently = (currentTime >= eventStartTime) && (currentTime <= eventEndTime);
 

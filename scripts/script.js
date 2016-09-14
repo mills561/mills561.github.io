@@ -16,6 +16,18 @@ var IDS = {
   "Steve": 'wuebbst@gmail.com'
 };
 
+var EMAILS = {
+  'davsan56@gmail.com' : 'david',
+  'sswisty7@gmail.com' : 'shawn',
+  'ecp341@gmail.com' : 'ethanp',
+  'gerrardletoux@gmail.com' : 'ethang',
+  'jmasterj512@gmail.com' : 'justin',
+  'devilsrage17@gmail.com' : 'kyle',
+  'nickd5142@gmail.com' : 'nick',
+  'sebastiancoraccio@gmail.com' : 'sebastian',
+  'wuebbst@gmail.com' : 'steve'
+};
+
 /**
 * Check if current user has authorized this application.
 */
@@ -111,7 +123,6 @@ function listUpcomingEvents() {
 * @param {string} message Text to be placed in pre element.
 */
 function appendPre(message) {
-  var pre = document.getElementById('output');
-  var textContent = document.createTextNode(message + '\n');
-  pre.appendChild(textContent);
+  var toAdd = document.getElementById(id);
+  toAdd.innerHTML += message;
 }

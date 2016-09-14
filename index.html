@@ -25,61 +25,63 @@
     <div id="header" class="row text-center">
       <h1>Mills 561 Schedule</h1>
     </div>
-    <div id="authorize-div" style="display: none">
-      <span>Authorize access to Google Calendar API</span>
+    <div class="row" id="authorize-div" style="display: none">
+      <h3>In order to view this webpage, you will need to authorize access to Google Calendar API</h3>
       <!--Button for the user to click to initiate auth sequence -->
-      <button id="authorize-button" onclick="handleAuthClick(event)">
+      <button class="btn btn-primary" role="button" id="authorize-button" onclick="handleAuthClick(event)">
         Authorize
       </button>
     </div>
-    <div class="row text-center">
-      <div class="col-xs-4" id="david">
-        <h3>David</h3>
+    <div id="hide-if-authorizing">
+      <div class="row text-center">
+        <div class="col-xs-4" id="david">
+          <h3>David</h3>
+        </div>
+        <div class="col-xs-4" id="shawn">
+          <h3>Shawn</h3>
+        </div>
+        <div class="col-xs-4" id="nick">
+          <h3>Nick</h3>
+        </div>
       </div>
-      <div class="col-xs-4" id="shawn">
-        <h3>Shawn</h3>
+      <div class="row text-center">
+        <div class="col-xs-4" id="eric">
+          <h3>Eric</h3>
+        </div>
+        <div class="col-xs-4" id="ethanp">
+          <h3>Ethan P</h3>
+        </div>
+        <div class="col-xs-4" id="sebastian">
+          <h3>Sebastian</h3>
+        </div>
       </div>
-      <div class="col-xs-4" id="nick">
-        <h3>Nick</h3>
+      <div class="row text-center">
+        <div class="col-xs-4" id="steve">
+          <h3>Steve</h3>
+        </div>
+        <div class="col-xs-4" id="justin">
+          <h3>Justin</h3>
+        </div>
+        <div class="col-xs-4" id="ethang">
+          <h3>Ethan G</h3>
+        </div>
       </div>
-    </div>
-    <div class="row text-center">
-      <div class="col-xs-4" id="eric">
-        <h3>Eric</h3>
+      <div class="row text-center">
+        <div class="col-xs-4" id="kyle">
+          <h3>Kyle</h3>
+        </div>
+        <div class="col-xs-4" id="will">
+          <h3>Will</h3>
+        </div>
+        <div class="col-xs-4" id="colin">
+          <h3>Colin</h3>
+        </div>
       </div>
-      <div class="col-xs-4" id="ethanp">
-        <h3>Ethan P</h3>
-      </div>
-      <div class="col-xs-4" id="sebastian">
-        <h3>Sebastian</h3>
-      </div>
-    </div>
-    <div class="row text-center">
-      <div class="col-xs-4" id="steve">
-        <h3>Steve</h3>
-      </div>
-      <div class="col-xs-4" id="justin">
-        <h3>Justin</h3>
-      </div>
-      <div class="col-xs-4" id="ethang">
-        <h3>Ethan G</h3>
-      </div>
-    </div>
-    <div class="row text-center">
-      <div class="col-xs-4" id="kyle">
-        <h3>Kyle</h3>
-      </div>
-      <div class="col-xs-4" id="will">
-        <h3>Will</h3>
-      </div>
-      <div class="col-xs-4" id="colin">
-        <h3>Colin</h3>
-      </div>
-    </div>
-    <div class="row" id="footer">
-      <div class="col-xs-6 col-xs-offset-3">
-        <div class="alert alert-info" role="alert">
-          If you don't see anything listed under someones name, that means they have not shared their calendar with you! Ask them to share it with you
+      <div class="row" id="footer">
+        <div class="col-xs-6 col-xs-offset-3">
+          <div class="alert alert-info" role="alert">
+            If you don't see anything listed under someones name, that means they have not shared their calendar with you! Ask them to share it with you
+          </div>
         </div>
       </div>
     </div>

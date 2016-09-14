@@ -53,14 +53,17 @@ function checkAuth() {
 */
 function handleAuthResult(authResult) {
   var authorizeDiv = document.getElementById('authorize-div');
+  var everythingElse = document.getElementById('hide-if-authorizing');
   if (authResult && !authResult.error) {
-  // Hide auth UI, then load client library.
-  authorizeDiv.style.display = 'none';
-  loadCalendarApi();
+    // Hide auth UI, then load client library.
+    authorizeDiv.style.display = 'none';
+    everythingElse.style.display = 'block';
+    loadCalendarApi();
   } else {
-  // Show auth UI, allowing the user to initiate authorization by
-  // clicking authorize button.
-  authorizeDiv.style.display = 'inline';
+    // Show auth UI, allowing the user to initiate authorization by
+    // clicking authorize button.
+    authorizeDiv.style.display = 'inline';
+    everythingElse.style.display = 'none';
   }
 }
 

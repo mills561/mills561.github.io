@@ -14,7 +14,9 @@ var IDS = {
   "Nick": 'nickd5142@gmail.com',
   "Sebastian": 'bm2ii1o7n8mr7lnv71g2o9dvrg@group.calendar.google.com',
   "Eric" : 'ericloc84@yahoo.com',
-  "Steve": 'wuebbst@gmail.com'
+  "Steve": 'wuebbst@gmail.com',
+  "Will": 'wi.taveras@gmail.com',
+  "Colin": 'g50ubqc85erop4vblvlil2h1tk@group.calendar.google.com'
 };
 
 var EMAILS = {
@@ -27,7 +29,9 @@ var EMAILS = {
   'nickd5142@gmail.com' : 'nick',
   'sebastiancoraccio@gmail.com' : 'sebastian',
   'wuebbst@gmail.com' : 'steve',
-  'ericloc84@yahoo.com' : 'eric'
+  'ericloc84@yahoo.com' : 'eric',
+  'wi.taveras@gmail.com' : 'will',
+  'macnamee.colin@gmail.com' : 'colin'
 };
 
 /**
@@ -126,6 +130,10 @@ function listUpcomingEvents() {
             } else if (id == "steve") {
               where = "Woodsides or elsewhere";
             }
+          }
+
+          if (where == undefined) {
+            where = name + " has not put locations in their calendar";
           }
 
           appendPre(where, id);

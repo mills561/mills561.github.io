@@ -13,6 +13,7 @@ var IDS = {
   "Kyle": 'devilsrage17@gmail.com',
   "Nick": 'nickd5142@gmail.com',
   "Sebastian": 'bm2ii1o7n8mr7lnv71g2o9dvrg@group.calendar.google.com',
+  "Eric" : 'ericloc84@yahoo.com',
   "Steve": 'wuebbst@gmail.com'
 };
 
@@ -25,7 +26,8 @@ var EMAILS = {
   'devilsrage17@gmail.com' : 'kyle',
   'nickd5142@gmail.com' : 'nick',
   'sebastiancoraccio@gmail.com' : 'sebastian',
-  'wuebbst@gmail.com' : 'steve'
+  'wuebbst@gmail.com' : 'steve',
+  'ericloc84@yahoo.com' : 'eric'
 };
 
 /**

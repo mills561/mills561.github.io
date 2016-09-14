@@ -84,10 +84,7 @@ function listUpcomingEvents() {
 
     request.execute(function(resp) {
       var events = resp.items;
-      var name = events[0].creator.displayName;
-      if (!name) {
-        name = events[0].creator.email;
-      }
+      var name = Object.keys(IDS)[j] + "'s";
       appendPre(name + ' Next event:');
 
       if (events.length > 0) {
@@ -106,6 +103,15 @@ function listUpcomingEvents() {
 
     });
   }
+}
+
+Object.prototype.getKeyByValue = function (value) {
+    for (var prop in this) {
+        if ( this.hasOwnProperty(prop)) {
+             if (this[prop] === value)
+                 return prop;
+        }
+    }
 }
 
 /**

@@ -119,8 +119,12 @@ function listUpcomingEvents() {
           var where = event.location;
           if (currently)
             where = event.location;
-          else
-            where = "Mills";
+          else {
+            where = "Mills or elsewhere";
+            if (id == "sebastian") {
+              where = "Barrington or elsewhere";
+            }
+          }
 
           appendPre(where, id);
         }

@@ -95,12 +95,11 @@ function listUpcomingEvents() {
             when = event.start.date;
           }
           var where = event.location;
-          appendPre(event.summary + ' (' + when + ')' + ' (' + where + ')');
+          appendPre(event.summary + ' (' + when + ')' + ' (' + where + ')\n');
         }
       } else {
         appendPre('No upcoming events found.');
       }
-
     });
   }
 }

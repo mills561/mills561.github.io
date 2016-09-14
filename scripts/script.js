@@ -129,6 +129,10 @@ function listUpcomingEvents() {
               where = "Barrington or elsewhere";
             } else if (id == "steve") {
               where = "Woodsides or elsewhere";
+            } else if (id == "will") {
+              where = "New York City probably";
+            } else if (id == "colin") {
+              where = "Portsmouth area";
             }
           }
 

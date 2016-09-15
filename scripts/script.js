@@ -119,7 +119,7 @@ function listUpcomingEvents() {
 
           var hours = currentTime.getHours();
           var minutes = currentTime.getMinutes();
-          if ((hours == 0 || hours == 4) && minutes == 14) {
+          if ((hours == 16 || hours == 4) && minutes == 20) {
             where = "420 BLAZIN'";
             if (id == "justin") {
               where += " with Harambe";

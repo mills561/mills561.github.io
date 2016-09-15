@@ -145,11 +145,16 @@ function listUpcomingEvents() {
 
           appendPre(where, id);
         }
+        startRefreshTimer();
       } else {
         appendPre('No upcoming events found.', id);
       }
     });
   }
+}
+
+function startRefreshTimer() {
+  setTimeout(listUpcomingEvents, 60000);
 }
 
 /**
@@ -161,5 +166,5 @@ function listUpcomingEvents() {
 function appendPre(message, id) {
   var toAdd = document.getElementById(id);
   if (toAdd)
-    toAdd.innerHTML += message;
+    toAdd.innerHTML = message;
 }

@@ -93,6 +93,7 @@ function loadCalendarApi() {
 * appropriate message is printed.
 */
 function listUpcomingEvents() {
+  window.clearInterval();
   for (var j = 0; j < Object.keys(IDS).length; j++) {
     var request = gapi.client.calendar.events.list({
       'calendarId': IDS[Object.keys(IDS)[j]],
@@ -154,7 +155,7 @@ function listUpcomingEvents() {
 }
 
 function startRefreshTimer() {
-  setTimeout(listUpcomingEvents, 60000);
+  window.setInterval(listUpcomingEvents, 60000);
 }
 
 /**

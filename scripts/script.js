@@ -117,30 +117,39 @@ function listUpcomingEvents() {
           var eventEndTime = new Date(event.end.dateTime);
           var currentTime = new Date();
 
-          var currently = (currentTime >= eventStartTime) && (currentTime <= eventEndTime);
-
-          if (!when) {
-            when = event.start.date;
-          }
-
-          var where = event.location;
-          if (currently)
-            where = event.location;
-          else {
-            where = "Mills or elsewhere";
-            if (id == "sebastian") {
-              where = "Barrington or elsewhere";
-            } else if (id == "steve") {
-              where = "Woodsides or elsewhere";
-            } else if (id == "will") {
-              where = "New York City probably";
-            } else if (id == "colin") {
-              where = "Portsmouth area";
+          var hours = current.getHours();
+          var minutes = current.getMinutes();
+          if ((hours == 0 || hours == 4) && minutes == 13) {
+            where = "420 BLAZIN'";
+            if (id == "justin") {
+              where += " with Harambe";
             }
-          }
+          } else {
+            var currently = (currentTime >= eventStartTime) && (currentTime <= eventEndTime);
 
-          if (where == undefined) {
-            where = name + " has not put locations in their calendar";
+            if (!when) {
+              when = event.start.date;
+            }
+
+            var where = event.location;
+            if (currently)
+              where = event.location;
+            else {
+              where = "Mills or elsewhere";
+              if (id == "sebastian") {
+                where = "Barrington or elsewhere";
+              } else if (id == "steve") {
+                where = "Woodsides or elsewhere";
+              } else if (id == "will") {
+                where = "New York City probably";
+              } else if (id == "colin") {
+                where = "Portsmouth area";
+              }
+            }
+
+            if (where == undefined) {
+              where = name + " has not put locations in their calendar";
+            }
           }
 
           appendPre(where, id);

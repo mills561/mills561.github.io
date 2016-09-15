@@ -145,11 +145,16 @@ function listUpcomingEvents() {
 
           appendPre(where, id);
         }
+        startRefreshTimer();
       } else {
         appendPre('No upcoming events found.', id);
       }
     });
   }
+}
+
+function startRefreshTimer() {
+  setTimeout(listUpcomingEvents, 3000);
 }
 
 /**

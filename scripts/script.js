@@ -93,7 +93,6 @@ function loadCalendarApi() {
 * appropriate message is printed.
 */
 function listUpcomingEvents() {
-  window.clearInterval();
   for (var j = 0; j < Object.keys(IDS).length; j++) {
     var request = gapi.client.calendar.events.list({
       'calendarId': IDS[Object.keys(IDS)[j]],
@@ -146,16 +145,11 @@ function listUpcomingEvents() {
 
           appendPre(where, id);
         }
-        startRefreshTimer();
       } else {
         appendPre('No upcoming events found.', id);
       }
     });
   }
-}
-
-function startRefreshTimer() {
-  window.setInterval(listUpcomingEvents, 60000);
 }
 
 /**

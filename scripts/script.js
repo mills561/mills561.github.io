@@ -117,9 +117,9 @@ function listUpcomingEvents() {
           var eventEndTime = new Date(event.end.dateTime);
           var currentTime = new Date();
 
-          var hours = current.getHours();
-          var minutes = current.getMinutes();
-          if ((hours == 0 || hours == 4) && minutes == 13) {
+          var hours = currentTime.getHours();
+          var minutes = currentTime.getMinutes();
+          if ((hours == 0 || hours == 4) && minutes == 14) {
             where = "420 BLAZIN'";
             if (id == "justin") {
               where += " with Harambe";

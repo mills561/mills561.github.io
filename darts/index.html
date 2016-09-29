@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mills 561 Darts</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Angular -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+
+    <!-- Custom js -->
+    <script src="script.js"></script>
+    <script type="text/javascript" src="ngEnter.js"></script>
+  </head>
+  <body ng-app="darts" ng-controller="myCtrl" class="container">
+    <div class="row text-center" id="top">
+      <div class="col-md-5">
+        <h3 ng-click="showHideFirstName()" ng-show="showFirstName">{{firstName}}</h3>
+        <input type="text" name="firstName" ng-show="!showFirstName" ng-enter="showHideFirstName()" ng-model="firstName" placeholder="Enter name..." />
+      </div>
+      <div class="col-md-2">
+        <h3>Cricket</h3>
+      </div>
+      <div class="col-md-5">
+        <h3 ng-click="showHideSecondName()" ng-show="showSecondName">{{secondName}}</h3>
+        <input type="text" name="secondName" ng-show="!showSecondName" ng-enter="showHideSecondName()" ng-model="secondName" placeholder="Enter name..." />
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-12">
+        <div class="row" ng-repeat="i in getNumber(7) track by $index">
+          <div class="col-md-5 rightBorder">
+            <h3>Check mark</h3>
+          </div>
+          <div class="col-md-2 rightBorder">
+            <h3>{{value[$index]}}</h3>
+          </div>
+          <div class="col-md-5">
+            <h3>Check mark</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

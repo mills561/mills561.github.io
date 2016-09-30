@@ -24,34 +24,60 @@
     <script src="script.js"></script>
     <script type="text/javascript" src="ngEnter.js"></script>
   </head>
-  <body ng-app="darts" ng-controller="myCtrl" class="container">
-    <div class="row text-center" id="top">
-      <div class="col-xs-4">
-        <h3 ng-click="showHideFirstName()" ng-show="showFirstName">{{firstName}}</h3>
-        <input type="text" name="firstName" ng-show="!showFirstName" ng-enter="showHideFirstName()" ng-model="firstName" placeholder="Enter name..." />
+  <body ng-app="darts" ng-controller="myCtrl">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="https://mills561.github.io">Mills 561</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="https://mills561.github.io/darts">Darts</a></li>
+          </ul>
+          <form class="navbar-form">
+            <button type="submit" class="btn btn-default" ng-click="reset()">Reset</button>
+          </form>
+        </div>
       </div>
-      <div class="col-xs-4">
-        <h3>Cricket</h3>
+    </nav>
+    <div class="container">
+      <div class="row text-center" id="top">
+        <div class="col-xs-4">
+          <h3 ng-click="showHideFirstName()" ng-show="showFirstName">{{firstName}}</h3>
+          <input type="text" name="firstName" ng-show="!showFirstName" ng-enter="showHideFirstName()" ng-model="firstName" placeholder="Enter name..." />
+        </div>
+        <div class="col-xs-4">
+          <h3>Cricket</h3>
+        </div>
+        <div class="col-xs-4">
+          <h3 ng-click="showHideSecondName()" ng-show="showSecondName">{{secondName}}</h3>
+          <input type="text" name="secondName" ng-show="!showSecondName" ng-enter="showHideSecondName()" ng-model="secondName" placeholder="Enter name..." />
+        </div>
       </div>
-      <div class="col-xs-4">
-        <h3 ng-click="showHideSecondName()" ng-show="showSecondName">{{secondName}}</h3>
-        <input type="text" name="secondName" ng-show="!showSecondName" ng-enter="showHideSecondName()" ng-model="secondName" placeholder="Enter name..." />
-      </div>
-    </div>
-    <div class="row text-center">
-      <div class="col-xs-12">
-        <div class="row" ng-repeat="i in getNumber(7) track by $index">
-          <div class="col-xs-4 rightBorder">
-            <h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></h3>
+      <div class="row text-center">
+        <div class="col-xs-4">
+          <div ng-repeat="i in getNumber(7) track by $index" id="leftSide">
+            <h3 ng-click="addCheck($event)">click</h3>
           </div>
-          <div class="col-xs-4">
+        </div>
+        <div class="col-xs-4 border">
+          <div ng-repeat="i in getNumber(7) track by $index">
             <h3>{{value[$index]}}</h3>
           </div>
-          <div class="col-xs-4 leftBorder">
-            <h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></h3>
+        </div>
+        <div class="col-xs-4">
+          <div ng-repeat="i in getNumber(7) track by $index" id="rightSide">
+            <h3 ng-click="addCheck($event)">click</h3>
           </div>
         </div>
       </div>
     </div>
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+            <p class="text-muted">&copy;&nbsp;David San Antonio 2016 | <a href="https://github.com/mills561/mills561.github.io">Github</a></p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -15,6 +15,19 @@ app.controller("myCtrl", ['$scope', function ($scope) {
         $scope.showSecondName = !$scope.showSecondName;
     }
 
+    $scope.addCheck = function(event) {
+        console.log(event);
+        var current = event.currentTarget.innerHTML;
+        if (current == "click") {
+            event.currentTarget.innerHTML = "";
+        }
+        event.currentTarget.innerHTML += "<span class='glyphicon glyphicon-ok'></span>";
+    }
+
+    $scope.reset = function() {
+        location.reload();
+    }
+
     $scope.getNumber = function(num) {
         return new Array(num);   
     }

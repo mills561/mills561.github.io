@@ -6,10 +6,19 @@ input {
     border-bottom: 1px solid black;
 }
 
-.rightBorder {
+.border {
+    border-left: 1px solid black;
     border-right: 1px solid black;
 }
 
-.leftBorder {
-    border-left: 1px solid black;
+.container .text-muted {
+    margin: 20px 0;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #f5f5f5;
 }

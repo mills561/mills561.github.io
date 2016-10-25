@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mills 561 Chain Reaction</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Angular -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+
+    <!-- Custom js -->
+    <script src="script.js"></script>
+  </head>
+  <body class="container-fluid" ng-app="chain" ng-controller="myCtrl">
+    <div class="row page-header text-center">
+      <h1>Chain Reaction</h1>
+    </div>
+    <div class="row text-center">
+      <div class="col-xs-5">
+        <input type="text" placeholder="Team 1" />
+        Score: {{teamOneScore}}
+        <button class="btn btn-default" ng-click="addTeamOneScore()">Add Score</button>
+      </div>
+      <div class="col-xs-2">
+        Score to Add: <input type="number" ng-model="score" />
+      </div>
+      <div class="col-xs-5">
+        <input type="text" placeholder="Team 1" />
+        Score: {{teamTwoScore}}
+        <button class="btn btn-default" ng-click="addTeamTwoScore()">Add Score</button>
+      </div>
+    </div>
+    <div class="row text-center">
+      <input type="text" class="word" /><br />
+      <input type="text" class="word" /><br />
+      <input type="text" class="word" /><br />
+      <input type="text" class="word" /><br />
+      <input type="text" class="word" /><br />
+      <input type="text" class="word" /><br />
+      <input type="text" class="word" />
+    </div>
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+            <p class="text-muted">&copy;&nbsp;David San Antonio 2016 | <a href="https://github.com/mills561/mills561.github.io">Github</a> | <a href="http://www.gsntv.com/show/chain-reaction/">Chain Reaction Game</a></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

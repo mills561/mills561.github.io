@@ -19,6 +19,10 @@ input:focus {
     width: 80%;
 }
 
+.inline {
+    display: inline-block;
+}
+
 .word {
     width: 80%;
     border-bottom: 1px solid black;

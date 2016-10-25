@@ -7,7 +7,7 @@ app.controller("myCtrl", ['$scope', '$interval', function ($scope, $interval) {
 
     $scope.total = 0;
     $scope.timerStarted = false;
-    $scope.time = 10;
+    $scope.time = 60;
 
     $scope.fastMoneyWords = [];
     $scope.currentWord = 0;
@@ -23,6 +23,7 @@ app.controller("myCtrl", ['$scope', '$interval', function ($scope, $interval) {
     var stop;
     $scope.startTimer = function() {
         $scope.total = 0;
+        $scope.currentWord = Math.floor(Math.random() * $scope.fastMoneyWords.length);
         if ($scope.time == 0) $scope.time = 60;
         $scope.timerStarted = true;
 
@@ -36,10 +37,11 @@ app.controller("myCtrl", ['$scope', '$interval', function ($scope, $interval) {
     }
 
     $scope.newWord = function(correct) {
-        $scope.currentWord++;
         if (correct && $scope.total < 7) {
             $scope.total++;
+            $scope.fastMoneyWords.splice($scope.fastMoneyWords.indexOf($scope.fastMoneyWords[$scope.currentWord]), 1);
         }
+        $scope.currentWord = Math.floor(Math.random() * $scope.fastMoneyWords.length);
     }
 
     $scope.stopTimer = function() {

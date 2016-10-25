@@ -55,14 +55,18 @@ app.controller("myCtrl", ['$scope', '$interval', function ($scope, $interval) {
         }
     }
 
-    $scope.addWord = function() {
-        $scope.fastMoneyWords.push($scope.wordToAdd);
-        $scope.wordToAdd = "";
-        if ($scope.fastMoneyWords.length == 7) {
-            $scope.enterWords = false;
-            $scope.startTimer();
-        } else {
-            document.getElementById("addWords").focus();
+    $scope.addWord = function(key) {
+        if (key == 13) {
+            if ($scope.wordToAdd.length > 0) {
+                $scope.fastMoneyWords.push($scope.wordToAdd);
+                $scope.wordToAdd = "";
+                if ($scope.fastMoneyWords.length == 7) {
+                    $scope.enterWords = false;
+                    $scope.startTimer();
+                } else {
+                    document.getElementById("addWords").focus();
+                }
+            }
         }
     }
 }]);

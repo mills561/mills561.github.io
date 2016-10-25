@@ -34,8 +34,8 @@
         <br />
         <button class="btn btn-default" ng-click="enterWords = true" ng-hide="timerStarted || enterWords">Enter words</button>
         <div ng-show="enterWords">
-          <input type="text" ng-model="wordToAdd" placeholder="Enter word here" id="addWords" />
-          <button class="btn btn-default" ng-click="addWord()">Add to list</button>
+          <input type="text" ng-model="wordToAdd" placeholder="Enter word here" id="addWords" ng-keypress="addWord($event.originalEvent.keyCode)" />
+          <button class="btn btn-default" ng-click="addWord(13)">Add to list</button>
           {{7 - fastMoneyWords.length}} words left to add
         </div>
         <div ng-show="timerStarted">

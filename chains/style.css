@@ -23,6 +23,10 @@ input:focus {
     display: inline-block;
 }
 
+.margin-top {
+    margin-top: 10px;
+}
+
 .word {
     width: 80%;
     border-bottom: 1px solid black;

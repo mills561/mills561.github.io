@@ -23,26 +23,46 @@
     <!-- Custom js -->
     <script src="../script.js"></script>
   </head>
-  <body lass="container-fluid" ng-app="chain" ng-controller="myCtrl">
-    <div class="row page-header text-center">
-      <h1>Chain Reaction: <small>Fast Money</small></h1>
-    </div>
-    <div class="row text-center">
-      <div class="col-xs-12">
-        <h2 class="inline">Score: <sup>{{total}}</sup>&frasl;<sub>7</sub></h2>
-        <h2 class="inline">Time: {{time}}</h2>
-        <br />
-        <button class="btn btn-default" ng-click="enterWords = true" ng-hide="timerStarted || enterWords">Enter words</button>
-        <div ng-show="enterWords">
-          <input type="text" ng-model="wordToAdd" placeholder="Enter word here" id="addWords" ng-keypress="addWord($event.originalEvent.keyCode)" />
-          <button class="btn btn-default" ng-click="addWord(13)">Add to list</button>
-          {{7 - fastMoneyWords.length}} words left to add
+  <body ng-app="chain" ng-controller="myCtrl">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="https://mills561.github.io">Mills 561</a>
         </div>
-        <div ng-show="timerStarted">
-          <h1>{{fastMoneyWords[currentWord]}}</h1>
-          <button class="btn btn-success" ng-click="newWord(true)">Correct</button>
-          <button class="btn btn-warning" ng-click="newWord(false)">Skip</button>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="https://mills561.github.io/"">Calendar</a></li>
+            <li><a href="https://mills561.github.io/darts">Darts</a></li>
+            <li class="active"><a href="https://mills561.github.io/chains">Chains</a></li>
+          </ul>
         </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row text-center">
+        <h1>Chain Reaction: <small>Fast Money</small></h1>
+        <hr />
+      </div>
+      <div class="row text-center">
+        <div class="col-xs-12">
+          <h2 class="inline">Score: <sup>{{total}}</sup>&frasl;<sub>7</sub></h2>
+          <h2 class="inline">Time: {{time}}</h2>
+          <br />
+          <button class="btn btn-default" ng-click="enterWords = true" ng-hide="timerStarted || enterWords">Enter words</button>
+          <div ng-show="enterWords">
+            <input type="text" ng-model="wordToAdd" placeholder="Enter word here" id="addWords" ng-keypress="addWord($event.originalEvent.keyCode)" />
+            <button class="btn btn-default" ng-click="addWord(13)">Add to list</button>
+            {{7 - fastMoneyWords.length}} words left to add
+          </div>
+          <div ng-show="timerStarted">
+            <h1>{{fastMoneyWords[currentWord]}}</h1>
+            <button class="btn btn-success" ng-click="newWord(true)">Correct</button>
+            <button class="btn btn-warning" ng-click="newWord(false)">Skip</button>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center margin-top">
+        <a href="../" class="btn btn-default">Back</a>
       </div>
     </div>
     <footer class="footer text-center">

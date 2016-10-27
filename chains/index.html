@@ -23,34 +23,51 @@
     <!-- Custom js -->
     <script src="script.js"></script>
   </head>
-  <body class="container-fluid" ng-app="chain" ng-controller="myCtrl">
-    <div class="row page-header text-center">
+  <body ng-app="chain" ng-controller="myCtrl">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="https://mills561.github.io">Mills 561</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="https://mills561.github.io/"">Calendar</a></li>
+            <li><a href="https://mills561.github.io/darts">Darts</a></li>
+            <li class="active"><a href="https://mills561.github.io/chains">Chains</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="row text-center">
       <h1>Chain Reaction</h1>
+      <hr />
     </div>
-    <div class="row text-center">
-      <div class="col-xs-5">
-        <input type="text" placeholder="Team 1" />
-        Score: {{teamOneScore}}
-        <button class="btn btn-default" ng-click="addTeamOneScore()">Add Score</button>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-xs-5">
+          <input type="text" placeholder="Team 1" />
+          Score: {{teamOneScore}}
+          <button class="btn btn-default" ng-click="addTeamOneScore()">Add Score</button>
+        </div>
+        <div class="col-xs-2">
+          Score to Add: <input type="number" ng-model="score" />
+        </div>
+        <div class="col-xs-5">
+          <input type="text" placeholder="Team 1" />
+          Score: {{teamTwoScore}}
+          <button class="btn btn-default" ng-click="addTeamTwoScore()">Add Score</button>
+        </div>
       </div>
-      <div class="col-xs-2">
-        Score to Add: <input type="number" ng-model="score" />
+      <div class="row text-center">
+        <input type="text" class="word" /><br />
+        <input type="text" class="word" /><br />
+        <input type="text" class="word" /><br />
+        <input type="text" class="word" /><br />
+        <input type="text" class="word" /><br />
+        <input type="text" class="word" /><br />
+        <input type="text" class="word" /><br /><br />
+        <a class="btn btn-default" href="fast/">Fast Money</a>
       </div>
-      <div class="col-xs-5">
-        <input type="text" placeholder="Team 1" />
-        Score: {{teamTwoScore}}
-        <button class="btn btn-default" ng-click="addTeamTwoScore()">Add Score</button>
-      </div>
-    </div>
-    <div class="row text-center">
-      <input type="text" class="word" /><br />
-      <input type="text" class="word" /><br />
-      <input type="text" class="word" /><br />
-      <input type="text" class="word" /><br />
-      <input type="text" class="word" /><br />
-      <input type="text" class="word" /><br />
-      <input type="text" class="word" /><br /><br />
-      <a class="btn btn-default" href="fast/">Fast Money</a>
     </div>
     <footer class="footer text-center">
       <div class="container">

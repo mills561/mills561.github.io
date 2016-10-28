@@ -7,7 +7,7 @@ app.controller("myCtrl", ['$scope', '$interval', function ($scope, $interval) {
 
     $scope.total = 0;
     $scope.timerStarted = false;
-    $scope.time = 10;
+    $scope.time = 60;
 
     $scope.fastMoneyWords = [];
     $scope.endingWords = [];

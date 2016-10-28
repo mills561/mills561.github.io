@@ -48,7 +48,17 @@
           <h2 class="inline">Score: <sup>{{total}}</sup>&frasl;<sub>7</sub></h2>
           <h2 class="inline">Time: {{time}}</h2>
           <br />
-          <button class="btn btn-default" ng-click="enterWords = true" ng-hide="timerStarted || enterWords">Enter words</button>
+          <div ng-show="finished">
+            <ul class="inline">
+              <h4 id="correctList" class="correct">
+                <li ng-repeat="word in correctWords">{{word}}&nbsp;<i class="glyphicon glyphicon-ok"></i></li>
+              </h4>
+              <h4 id="incorrectList" class="incorrect">
+                <li ng-repeat="word in fastMoneyWords">{{word}}&nbsp;<i class="glyphicon glyphicon-remove"></i></li>
+              </h4>
+            </ul>
+          </div>
+          <button class="btn btn-default" ng-click="enterNewWords()" ng-hide="timerStarted || enterWords">Enter words</button>
           <div ng-show="enterWords">
             <input type="text" ng-model="wordToAdd" placeholder="Enter word here" id="addWords" ng-keypress="addWord($event.originalEvent.keyCode)" />
             <button class="btn btn-default" ng-click="addWord(13)">Add to list</button>

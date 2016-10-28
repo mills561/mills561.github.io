@@ -23,6 +23,22 @@ input:focus {
     display: inline-block;
 }
 
+#correctList {
+    margin-bottom: 0;
+}
+
+#incorrectList {
+    margin-top: 0;
+}
+
+.incorrect {
+    color: #a94442;
+}
+
+.correct {
+    color: #3c763d;
+}
+
 .margin-top {
     margin-top: 10px;
 }

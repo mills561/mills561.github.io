@@ -53,19 +53,20 @@
           Score to Add: <input type="number" ng-model="score" />
         </div>
         <div class="col-xs-5">
-          <input type="text" placeholder="Team 1" />
+          <input type="text" placeholder="Team 2" />
           Score: {{teamTwoScore}}
           <button class="btn btn-default" ng-click="addTeamTwoScore()">Add Score</button>
         </div>
       </div>
       <div class="row text-center">
-        <input type="text" class="word" /><br />
-        <input type="text" class="word" /><br />
-        <input type="text" class="word" /><br />
-        <input type="text" class="word" /><br />
-        <input type="text" class="word" /><br />
-        <input type="text" class="word" /><br />
-        <input type="text" class="word" /><br /><br />
+        <input type="text" class="word" ng-model="word0" /><br />
+        <input type="text" class="word" ng-model="word1" /><br />
+        <input type="text" class="word" ng-model="word2" /><br />
+        <input type="text" class="word" ng-model="word3" /><br />
+        <input type="text" class="word" ng-model="word4" /><br />
+        <input type="text" class="word" ng-model="word5" /><br />
+        <input type="text" class="word" ng-model="word6" /><br /><br />
+        <button class="btn btn-default" ng-click="resetWords()">Reset</button>
         <a class="btn btn-default" href="fast/">Fast Money</a>
       </div>
     </div>

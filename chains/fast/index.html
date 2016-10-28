@@ -60,9 +60,11 @@
           </div>
           <button class="btn btn-default" ng-click="enterNewWords()" ng-hide="timerStarted || enterWords">Enter words</button>
           <div ng-show="enterWords">
-            <input type="text" ng-model="wordToAdd" placeholder="Enter word here" id="addWords" ng-keypress="addWord($event.originalEvent.keyCode)" />
-            <button class="btn btn-default" ng-click="addWord(13)">Add to list</button>
-            {{7 - fastMoneyWords.length}} words left to add
+            <form>
+              <input type="text" ng-model="wordToAdd" placeholder="Enter word here" id="addWords" ng-keypress="addWord($event.originalEvent.keyCode)" />
+              <button class="btn btn-default" ng-click="addWord(13)">Add to list</button>
+              &nbsp;&nbsp;{{7 - fastMoneyWords.length}} words left to add
+            </form>
           </div>
           <div ng-show="timerStarted">
             <h1>{{fastMoneyWords[currentWord]}}</h1>

@@ -137,7 +137,7 @@ function listUpcomingEvents() {
             else {
               where = "Mills or elsewhere";
               if (id == "sebastian") {
-                where = "Barrington or elsewhere";
+                where = "Epping or elsewhere";
               } else if (id == "steve") {
                 where = "Woodsides or elsewhere";
               } else if (id == "will") {

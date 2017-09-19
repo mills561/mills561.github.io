@@ -142,13 +142,21 @@ function listUpcomingEvents() {
               } else if (id == "will") {
                 where = "NYC BB";
               } else if (id == "colin") {
-                where = "Rochester";
+                where = "Dover";
               } eles if (id == "david") {
                 where = "Raleigh"; 
               } else if (id == "justin") {
                 where = "Weare";
               } else if (id == "shawn") {
                 where = "San Francisco Bay";
+              } else if (id == "eric") {
+                where = "Gables or somewhere"; 
+              } else if (id == "ethanp") {
+                where = "London!";
+              } else if (id == "ethang") {
+                where = "Gables or elsewhere"; 
+              } else if (id == "nick") {
+                where = "Hinsdale probably";
               }
             }
 

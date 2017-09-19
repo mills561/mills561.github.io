@@ -143,7 +143,7 @@ function listUpcomingEvents() {
                 where = "NYC BB";
               } else if (id == "colin") {
                 where = "Dover";
-              } eles if (id == "david") {
+              } else if (id == "david") {
                 where = "Raleigh"; 
               } else if (id == "justin") {
                 where = "Weare";

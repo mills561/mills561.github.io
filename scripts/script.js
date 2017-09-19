@@ -135,15 +135,20 @@ function listUpcomingEvents() {
             if (currently)
               where = event.location;
             else {
-              where = "Mills or elsewhere";
               if (id == "sebastian") {
                 where = "Epping or elsewhere";
               } else if (id == "steve") {
-                where = "Woodsides or elsewhere";
+                where = "Gables or elsewhere";
               } else if (id == "will") {
-                where = "New York City probably";
+                where = "NYC BB";
               } else if (id == "colin") {
-                where = "Portsmouth area";
+                where = "Rochester";
+              } eles if (id == "david") {
+                where = "Raleigh"; 
+              } else if (id == "justin") {
+                where = "Weare";
+              } else if (id == "shawn") {
+                where = "San Francisco Bay";
               }
             }
 

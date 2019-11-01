@@ -136,25 +136,25 @@ function listUpcomingEvents() {
               where = event.location;
             else {
               if (id == "sebastian") {
-                where = "Epping or elsewhere";
+                where = "Colorado";
               } else if (id == "steve") {
-                where = "Gables or elsewhere";
+                where = "Epping";
               } else if (id == "will") {
                 where = "NYC BB";
               } else if (id == "colin") {
-                where = "Dover";
+                where = "The real Portland";
               } else if (id == "david") {
-                where = "Raleigh"; 
+                where = "Malden"; 
               } else if (id == "justin") {
-                where = "Weare";
+                where = "Ashland";
               } else if (id == "shawn") {
-                where = "San Francisco Bay";
+                where = "The state of Portland";
               } else if (id == "eric") {
                 where = "Gables or somewhere"; 
               } else if (id == "ethanp") {
                 where = "London!";
               } else if (id == "ethang") {
-                where = "Gables or elsewhere"; 
+                where = "Weare"; 
               } else if (id == "nick") {
                 where = "Hinsdale probably";
               }
